@@ -108,8 +108,8 @@ var HHSmarkers = L.geoJson(health_hs, {
 
 //define base and overlay layers for control
 var baseLayers = {
-	"Percent in Poverty": bxpoverty,
-	"Percent with Disability": bronxdisab
+	"Percent in Poverty": bronxpov,
+	"Percent with Disability": disab
 	
 };
 var overlays = {
