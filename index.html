@@ -1,0 +1,108 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Commmunity Health Services in District 14</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.3/dist/leaflet.css" /> 
+  <link rel="stylesheet" href="https://cartodb-libs.global.ssl.fastly.net/cartodb.js/v3/3.15/themes/css/cartodb.css" /> 
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+
+<body>
+  <h1>Community Health and Human Services in District 14</h1>
+  <h4>How many health and human service providers are within the proposed study area?</h4>
+
+<!-- Create divs for map container and sidebar -->
+
+   <div id="mapsupercontainer">
+
+  <div id="mapcontainer"></div>
+
+  <br>
+
+<!-- Danger button from w3schools: https://www.w3schools.com/bootstrap/bootstrap_buttons.asp -->
+  <button type="button" class="btn btn-danger reset">Reset Map</button>
+
+   </br><br><h5><b>Data Sources: </b>
+   <br>Statistics on poverty: 2015 American Community Survey 5-year Estimates. 
+   <br>Health and Human Service facilities: Mapped in Esri ArcGIS, setting a 1/4 mile buffer around D14 and study area using City Planning Facilities Database (FacDB) on NYC Open Data 
+   <br>Jerome Ave study area: Mapped in Esri ArcGIS using study area defined in DCP's EIS Draft. 
+   <br>The City Council District: administrative boundary from Bytes of the Big Apple. 
+  </div>
+  
+<!-- Intro to Jerome Study area using DCP background info -->
+  <div id="sidebar">
+
+    The Jerome Avenue Neighborhood Planning Study aims to take a broad, comprehensive look at current and future community needs to identify a wide range of strategies and investments, including key land use and zoning changes, to support Jerome Avenue’s growth and vitality. This study looks at the two-mile stretch of Jerome Avenue, as well as the surrounding neighborhood in near City Council District 14 in the Bronx. Investment and access to community resources such as health and human service facilities are critical to fostering a more equitable and healthy city.</br></br>
+    </br>Explore the interactive map to view the location of current health and human service facilities within a 1/4 mile distance of Community District 14 and the Jerome Ave study area. The map highlights how these important resources relate spatially to poverty in the Bronx. Toggle the layers, or click on an area to see the level of poverty. </br></br>
+   
+  </div>
+
+<!-- Create legends for choropleth.  Based off tutorial here: 
+      http://bl.ocks.org/michellechandra/90d59f022ad7e9fd0e5d -->
+
+ <div id = "legend">
+    <div class='carto-legend density'>  
+      <ul>
+        <li class="min">
+          Percent in Poverty
+        </li>
+        
+        <li class="graph leg" style="border-radius: 0; border:none">
+          <div class="colors">
+            <div class="jenks" style="background-color:#F6d2a9"></div>
+            <div class="jenks" style="background-color:#F3aa84"></div>
+            <div class="jenks" style="background-color:#Ea8171"></div>
+            <div class="jenks" style="background-color:#D55d6a"></div>
+            <div class="jenks" style="background-color:#B13f64"></div>
+          </div>
+            <div class="colors" style="font-weight:normal; text-align: center">
+            <div class="jenks" style="padding-top: 5px" >[0-11]</div>
+            <div class="jenks" style="padding-top: 5px" >[12-23]</div>
+            <div class="jenks" style="padding-top: 5px" >[24-35]</div>
+            <div class="jenks" style="padding-top: 5px" >[36-46]</div>
+            <div class="jenks" style="padding-top: 5px" >[47-84]</div>
+          </div>
+        </li>
+      </ul>
+
+    <ul>
+      <li class="min">
+      Percent with Disability
+      </li>
+    
+      <li class="graph leg" style="border-radius: 0; border:none">
+        <div class="colors">
+          <div class="quartile" style="background-color:#EDF8FB"></div>
+          <div class="quartile" style="background-color:#B2E2E2"></div>
+          <div class="quartile" style="background-color:#66C2A4"></div>
+          <div class="quartile" style="background-color:#2CA25F"></div>
+          <div class="quartile" style="background-color:#006D2C"></div>
+        </div>
+          <div class="colors" style="font-weight:normal; text-align: center">
+          <div class="quartile" style="padding-top: 5px" >[0-21]</div>
+          <div class="quartile" style="padding-top: 5px" >[22-40]</div>
+          <div class="quartile" style="padding-top: 5px" >[41-62]</div>
+          <div class="quartile" style="padding-top: 5px" >[63-84]</div>
+          <div class="quartile" style="padding-top: 5px" >[84-100]</div>
+        </div>
+      </li>
+    </ul>
+
+  </div>
+</div>
+  <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+  <script src="https://cartodb-libs.global.ssl.fastly.net/cartodb.js/v3/3.15/cartodb.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet.js"></script>
+  <script src="js/bxpoverty.js"></script>
+  <script src="js/bronxdisab.js"></script>
+  <script src="js/health_hs.js"></script>
+  <script src="js/studyarea.js"></script>
+  <script src="js/cc_14.js"></script>
+  <script src="js/scripts.js"></script>
+
+</body>
+</html>
